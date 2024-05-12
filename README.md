@@ -58,8 +58,6 @@ print(f"Total income: {total_income}")
 Total income: 1351.46
 ```
 
-## README.md
-
 ### Task 3: Log File Analyzer
 
 **Description:**
