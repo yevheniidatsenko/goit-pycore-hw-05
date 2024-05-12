@@ -39,7 +39,6 @@ def show_all(contacts):
     else:
         print("No contacts found.")
 
-
 def main():
     contacts = {}
     print("Welcome to the assistant bot!")
@@ -54,11 +53,20 @@ def main():
         elif command == "hello":
             print("How can I help you?")
         elif command == "add":
-            print(add_contact(args, contacts))
+            if len(args) != 2:
+                print("Invalid arguments. Please provide name and phone.")
+            else:
+                print(add_contact(args, contacts))
         elif command == "change":
-            print(change_contact(contacts, *args))
+            if len(args) != 2:
+                print("Invalid arguments. Please provide name and phone.")
+            else:
+                print(change_contact(contacts, *args))
         elif command == "phone":
-            print(show_phone(contacts, args[0]))
+            if len(args) != 1:
+                print("Invalid arguments. Please provide a name.")
+            else:
+                show_phone(contacts, args[0])
         elif command == "all":
             show_all(contacts)
         else:
